@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espresso Reserve | 프리미엄 커피 브랜드</title>
+    <meta name="description" content="최고급 원두와 장인의 로스팅으로 완성된 깊은 풍미. Espresso Reserve에서 진정한 커피의 가치를 경험하세요.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Use Phosphor Icons for a more modern look if FontAwesome script fails, but I'll use simple emoji/css icons for reliability -->
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo">ESPRESSO RESERVE</a>
+        <div class="nav-links">
+            <a href="#home">홈페이지</a>
+            <a href="#products">제품</a>
+            <a href="#story">스토리</a>
+            <a href="#contact">문의</a>
+        </div>
+        <a href="en.html" class="lang-switch">English</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>완벽한 순간을 위한<br><span style="color: var(--accent);">한 잔의 예술</span></h1>
+            <p>우리는 단순한 커피를 넘어, 당신의 아침을 깨우고 일상에 영감을 불어넣는 완벽한 블렌딩을 추구합니다.</p>
+            <a href="#products" class="cta-button">제품 살펴보기</a>
+        </div>
+        <div class="hero-image-container">
+            <img src="hero.png" alt="Premium Coffee" class="hero-img">
+            <div class="steam-container" id="steam-container">
+                <!-- Steam particles will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="products">
+        <h2 class="section-title">우리의 가치</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">☕</div>
+                <h3>최상급 원두</h3>
+                <p>전 세계 1% 고산지대에서 선별된 아라비카 원두만을 사용하여 깊고 풍부한 바디감을 선사합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>장인 정신 로스팅</h3>
+                <p>원두 본연의 향을 극대화하기 위해 매일 새벽, 소량으로 정성껏 로스팅합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>지속 가능한 선택</h3>
+                <p>자연과 상생하는 공정무역 원두를 통해 더 나은 미래를 함께 만들어갑니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="story-image">
+            <img src="story.png" alt="Coffee Roasting">
+        </div>
+        <div class="story-content">
+            <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">우리의 이야기</h2>
+            <p style="font-size: 1.2rem; color: var(--text-main); margin-bottom: 1.5rem;">작은 골목의 로스터리에서 시작된 Espresso
+                Reserve는 오직 '맛'에 대한 집념 하나로 지금까지 달려왔습니다.</p>
+            <p style="color: var(--text-muted);">우리는 매일 아침 전 세계에서 도착한 신선한 원두를 검수하고, 가장 완벽한 로스팅 포인트를 찾기 위해 수만 번의 테스트를
+                거칩니다. 당신의 손에 들린 그 한 잔에 우리의 진심과 열정이 담겨 있습니다.</p>
+        </div>
+    </section>
+
+    <footer id="contact" style="padding: 4rem 10%; border-top: 1px solid var(--glass-border); text-align: center;">
+        <h2 class="section-title" style="margin-bottom: 2rem;">Contact Us</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">경상북도 경산시 진량읍 대구대로 201</p>
+        <p style="color: var(--text-muted);">piglloo34@gmail.com</p>
+        <div style="margin-top: 3rem; font-size: 0.8rem; color: #555;">
+            &copy; 2026 Espresso Reserve. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Steam effect generator
+        const steamContainer = document.getElementById('steam-container');
+        function createSteam() {
+            const particle = document.createElement('div');
+            particle.className = 'steam-particle';
+
+            // Randomize position within the cup area
+            const left = 40 + Math.random() * 20;
+            particle.style.left = left + '%';
+
+            // Randomize size and animation duration
+            const size = 2 + Math.random() * 6;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.animationDuration = (3 + Math.random() * 2) + 's';
+
+            steamContainer.appendChild(particle);
+
+            // Remove particle after animation
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        setInterval(createSteam, 300);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espresso Reserve | Premium Coffee Brand</title>
+    <meta name="description"
+        content="Exceptional flavor crafted with the finest beans and artisanal roasting. Experience the true value of coffee at Espresso Reserve.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo">ESPRESSO RESERVE</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Product</a>
+            <a href="#story">Story</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a href="index.html" class="lang-switch">한국어</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Art in Every Cup,<br><span style="color: var(--accent);">For Perfect Moments</span></h1>
+            <p>Beyond just coffee, we pursue the perfect blend that awakens your morning and inspires your daily life.
+            </p>
+            <a href="#products" class="cta-button">Explore Products</a>
+        </div>
+        <div class="hero-image-container">
+            <img src="hero.png" alt="Premium Coffee" class="hero-img">
+            <div class="steam-container" id="steam-container">
+                <!-- Steam particles will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="products">
+        <h2 class="section-title">Our Values</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">☕</div>
+                <h3>Premium Beans</h3>
+                <p>We use only selected Arabica beans from the world's top 1% high-altitude regions to deliver a deep
+                    and rich body.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>Artisanal Roasting</h3>
+                <p>To maximize the natural aroma of the beans, we roast them carefully in small batches every dawn.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>Sustainable Choice</h3>
+                <p>We create a better future together through Fair Trade beans that coexist with nature.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="story-image">
+            <img src="story.png" alt="Coffee Roasting">
+        </div>
+        <div class="story-content">
+            <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Our Story</h2>
+            <p style="font-size: 1.2rem; color: var(--text-main); margin-bottom: 1.5rem;">Started in a small alleyway
+                roastery, Espresso Reserve has been driven by a single obsession with 'flavor'.</p>
+            <p style="color: var(--text-muted);">Every morning, we inspect fresh beans arriving from around the world
+                and conduct thousands of tests to find the most perfect roasting point. Our heart and passion are
+                contained in that single cup held in your hand.</p>
+        </div>
+    </section>
+
+    <footer id="contact" style="padding: 4rem 10%; border-top: 1px solid var(--glass-border); text-align: center;">
+        <h2 class="section-title" style="margin-bottom: 2rem;">Contact Us</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">Daegu University, Gyeongsan, South Korea</p>
+        <p style="color: var(--text-muted);">piglloo34@gmail.com</p>
+        <div style="margin-top: 3rem; font-size: 0.8rem; color: #555;">
+            &copy; 2026 Espresso Reserve. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Steam effect generator
+        const steamContainer = document.getElementById('steam-container');
+        function createSteam() {
+            const particle = document.createElement('div');
+            particle.className = 'steam-particle';
+
+            const left = 40 + Math.random() * 20;
+            particle.style.left = left + '%';
+
+            const size = 2 + Math.random() * 6;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.animationDuration = (3 + Math.random() * 2) + 's';
+
+            steamContainer.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        setInterval(createSteam, 300);
+    </script>
+</body>
+
+</html>
